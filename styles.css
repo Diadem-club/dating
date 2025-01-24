@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "ButtonFont";
+  src: url("font/but.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TextFont";
+  src: url("font/text.otf") format("opentype");
+}
+
+body {
+  background: black url("drawable/bg.png") center center / cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "TextFont", sans-serif;
+  font-size: 39px;
+  overflow: hidden;
+}
+
+h1#main_text {
+  font-size: 1.2em; /* Размер текста */
+  background: linear-gradient(180deg, #aeb9f6,#aeb9f6, #ff67fc); /* Градиент текста */
+  -webkit-background-clip: text; /* Ограничение фона текстом */
+  -webkit-text-fill-color: transparent; /* Прозрачный цвет текста */
+  color: transparent; /* Для браузеров без поддержки */
+  text-align: center; /* Центрирование текста */
+  position: relative; /* Для работы фонового блока */
+  margin: 20px 0; /* Внешние отступы сверху и снизу */
+  padding: 0 20px; /* Добавляем горизонтальные отступы текста */
+}
+
+h1#main_text::before {
+  content: ''; /* Пустое содержимое */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Фон начинается с верхней границы текста */
+  left: 0; /* Фон совпадает с левым краем текста */
+  right: 0; /* Фон совпадает с правым краем текста */
+  bottom: -10px; /* Увеличиваем фон снизу */
+  background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+  z-index: -1; /* Помещаем фон под текст */
+  border-radius: 12px; /* Закругляем края фона */
+}
+
+
+
+
+
+
+
+.button {
+  background: linear-gradient(180deg, #ff0000, #ff00ff); /* Градиент от красного к розовому */
+  color: white; /* Цвет текста */
+  text-shadow: -2px -2px 0 black, 
+               2px -2px 0 black, 
+              -2px  2px 0 black, 
+               2px  2px 0 black; /* Черная обводка текста */
+  border: 2px solid black; /* Черная обводка кнопки */
+  margin: 16px; /* Промежуток между кнопками */
+  cursor: pointer; /* Курсор "указатель" при наведении */
+  border-radius: 9px; /* Закругленные углы кнопки */
+  text-decoration: none; /* Убираем подчеркивание текста */
+  font-family: "ButtonFont", sans-serif; /* Шрифт кнопки */
+  font-size: 2.9rem; /* Размер текста */
+  width: 190px; /* Ширина кнопки */
+  height: 63px; /* Высота кнопки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Учет отступов внутри размера кнопки */
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 20px; /* Отступ сверху для кнопок */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
